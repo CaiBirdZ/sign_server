@@ -15,7 +15,7 @@ var mysql = require('mysql'),
     dbOptions = {
         host: 'localhost',
         user: 'root',
-        password: 'root',
+        password: 'chuang521',
         port: 3306,
         database: 'sign_data'};
 app.use(myConnection(mysql, dbOptions, 'single'));
