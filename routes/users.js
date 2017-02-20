@@ -15,9 +15,7 @@ router.post('/', function(req, res, next) {
                         return next(err);
 
                     }else {
-                        if(result == null || result == {}){
-                            return next(err);
-                        }else{
+                        try{
                             if(result[0].password === req.body.password)
                             {
                                 console.log(result);
@@ -26,7 +24,10 @@ router.post('/', function(req, res, next) {
 
                                 return res.send({code:'002'});
                             }
+                        }catch (e){
+                            return res.send({code:'003'});
                         }
+
 
                     }
                 });
