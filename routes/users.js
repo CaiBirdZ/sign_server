@@ -1,9 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
+/* GET users' information. */
 router.post('/', function(req, res, next) {
-    try{
         req.getConnection(function(err,conn){
             if(err){
                 return next(err);
@@ -33,11 +32,6 @@ router.post('/', function(req, res, next) {
                 });
             }
         });
-    }catch(e){
-        console.log(e.description);
-        res.send({code:'003'});
-    }
-
 });
 
 module.exports = router;
