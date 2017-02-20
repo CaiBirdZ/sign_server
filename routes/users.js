@@ -15,14 +15,19 @@ router.post('/', function(req, res, next) {
                         return next(err);
 
                     }else {
-                        if(result[0].password === req.body.password)
-                        {
-                            console.log(result);
-                            return res.send({code:'000',result:result});
-                        }else {
+                        if(result == null || result == {}){
+                            return next(err);
+                        }else{
+                            if(result[0].password === req.body.password)
+                            {
+                                console.log(result);
+                                return res.send({code:'000',result:result});
+                            }else {
 
-                            return res.send({code:'002'});
+                                return res.send({code:'002'});
+                            }
                         }
+
                     }
                 });
             }
