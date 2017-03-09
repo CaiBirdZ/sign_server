@@ -8,6 +8,9 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 var sign = require('./routes/sign');
+var alterInfo = require('./routes/alterInfo');
+var record = require('./routes/record');
+var signOut = require('./routes/signOut');
 
 var app = express();
 //数据库链接
@@ -35,6 +38,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', index);
 app.use('/users', users);
 app.use('/sign',sign);
+app.use('/record',record);
+app.use('/signOut', signOut);
+app.use('/alterInfo', alterInfo);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

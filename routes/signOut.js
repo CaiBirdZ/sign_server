@@ -8,11 +8,11 @@ router.post('/', function(req, res, next) {
                 return next(err);
             }else{
                 console.log(req.body);
-                conn.query("insert into ?"+"sign_record(signOut,remark)"+"values(?,?) where jobNo=? and signDate=?",[req.body.cpID,req.body.time,req.body.jobNo,req.body.date],function(err,result){
+                conn.query("update "+req.body.cpID+"sign_record SET signOut=?,remark=? where jobNo=? and signDate=?",[req.body.time,req.body.remark,req.body.jobNo,req.body.date],function(err,result){
                     if(err){
                         return next(err);
                     }else{
-                        return res.send({code:"000"});
+                        return res.send({code:"1"});
                     }
                 });
             }
