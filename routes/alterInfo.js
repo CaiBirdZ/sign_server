@@ -15,7 +15,7 @@ router.post('/', function(req, res, next) {
                         return next(err);
 
                     }else {
-                        return {code:'000'};
+                        return res.send({code:'000'});
                     }
                 });
             }

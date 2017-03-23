@@ -11,6 +11,7 @@ var sign = require('./routes/sign');
 var alterInfo = require('./routes/alterInfo');
 var record = require('./routes/record');
 var signOut = require('./routes/signOut');
+var changePw = require('./routes/changePw');
 
 var app = express();
 //数据库链接
@@ -41,6 +42,8 @@ app.use('/sign',sign);
 app.use('/record',record);
 app.use('/signOut', signOut);
 app.use('/alterInfo', alterInfo);
+app.use('/changePw',changePw);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
