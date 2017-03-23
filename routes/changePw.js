@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var topClient = require("../public/javascripts/lib/topClient").TopClient;
+var topClient = require("./topClient").TopClient;
 /* GET users' information. */
 router.post('/',function(req,res,next){
     req.getConnection(function(err,conn){
