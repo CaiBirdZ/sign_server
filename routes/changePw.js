@@ -48,7 +48,7 @@ router.post('/confirm', function(req, res, next) {
         {
             'sms_type':'normal',
             'sms_free_sign_name':'爱签',
-            'sms_param':'{\"emName\":\"张闯\",\"number\":'+idCode+'}',
+            'sms_param':'{\"emName\":\"张闯\",\"number\":'+idCode.toString()+'}',
             'rec_num':req.body.emTel,
             'sms_template_code':'SMS_53530126'
         },
