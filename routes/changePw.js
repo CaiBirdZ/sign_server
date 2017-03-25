@@ -40,7 +40,7 @@ router.post('/confirm', function(req, res, next) {
         idCode += Math.floor(Math.random()*10);
     }
     var client = new topClient({
-        'appkey':'23662936  ',
+        'appkey':'23662936',
         'appsecret':'dfee5c7cc4c12137b2860ddf4cd59e3d',
         'REST_URL':'http://gw.api.taobao.com/router/rest'
     });
@@ -48,16 +48,20 @@ router.post('/confirm', function(req, res, next) {
         {
             'sms_type':'normal',
             'sms_free_sign_name':'爱签',
-            'sms_param':"{'emName':'张闯','number':"+idCode+"}",
+            'sms_param':'{\"emName\":\"张闯\",\"number\":'+idCode+'}',
             'rec_num':req.body.emTel,
             'sms_template_code':'SMS_53530126'
         },
         function (error,response) {
             if(!error){
+                console.log(response);
                 return res.send({okCode:"1",messageCode:idCode});
             }
-            else
+            else{
+                console.log(error);
                 return res.send({errCode:"1"});
+            }
+
         });
 
 });
