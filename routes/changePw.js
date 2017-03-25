@@ -8,7 +8,7 @@ router.post('/',function(req,res,next){
             return next(err);
         }else{
             console.log(req.body);
-            conn.query("update user_info set password=? where emTel=?", [req.body.newpassword,req.body.emTel],function(err,result){
+            conn.query("update user_info set password=? where emTel=?", [req.body.newPassword,req.body.emTel],function(err,result){
                 if(err){
 
                     return next(err);
