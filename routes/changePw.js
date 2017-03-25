@@ -21,20 +21,20 @@ router.post('/',function(req,res,next){
     });
 });
 router.post('/confirm', function(req, res, next) {
-    req.getConnection(function(err,conn){
-        if(err){
-            return next(err);
-        }else{
-            console.log(req.body);
-            conn.query("select * from user_info where emTel = ?", [req.body.newpassword,req.body.emTel],function(err,result){
-                if(err){
-                    return next(err);
-                }else if(result[0]==null||result[0]==""){
-                    return res.send({noUser:"1"});
-                }
-            });
-        }
-    });
+    //req.getConnection(function(err,conn){
+    //    if(err){
+    //        return next(err);
+    //    }else{
+    //        console.log(req.body);
+    //        conn.query("select * from user_info where emTel = ?", [req.body.newpassword,req.body.emTel],function(err,result){
+    //            if(err){
+    //                return next(err);
+    //            }else if(result[0]==null||result[0]==""){
+    //                return res.send({noUser:"1"});
+    //            }
+    //        });
+    //    }
+    //});
     var idCode = "";
     for(var i = 0;i<4;i++){
         idCode += Math.floor(Math.random()*10);
