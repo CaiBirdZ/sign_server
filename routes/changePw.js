@@ -26,7 +26,7 @@ router.post('/confirm', function(req, res, next) {
             return next(err);
         }else{
             console.log(req.body);
-            conn.query("select * user_info set password=? where emTel = ?", [req.body.newpassword,req.body.emTel],function(err,result){
+            conn.query("select * from user_info where emTel = ?", [req.body.newpassword,req.body.emTel],function(err,result){
                 if(err){
                     return next(err);
                 }else if(result[0]==null||result[0]==""){
@@ -44,10 +44,10 @@ router.post('/confirm', function(req, res, next) {
         'appsecret':'dfee5c7cc4c12137b2860ddf4cd59e3d',
         'REST_URL':'http://gw.api.taobao.com/router/rest'
     });
-    return client.execute('alibaba.aliqin.fc.sms.num.send',
+    client.execute('alibaba.aliqin.fc.sms.num.send',
         {
             'sms_type':'normal',
-            //'sms_free_sign_name':'爱签',
+            'sms_free_sign_name':'爱签',
             'sms_param':"{'emName':'张闯','number':"+idCode+"}",
             'rec_num':req.body.emTel,
             'sms_template_code':'SMS_53530126'
