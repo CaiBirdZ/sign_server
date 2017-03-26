@@ -21,21 +21,25 @@ router.post('/',function(req,res,next){
         }
     });
 });
+router.post('/reset',function(req,res,next){
+    req.getConnections(function(err,conn){
+        if(err){
+            return next(err);
+        }else {
+            conn.query("update user_info set password='123456' where emTel=?", [req.body.emTel],function(err,result){
+                if(err){
+
+                    return next(err);
+
+                }else {
+                    console.log(result);
+                    return res.send({code:'000'});
+                }
+            });
+        }
+    })
+})
 router.post('/confirm', function(req, res, next) {
-    //req.getConnection(function(err,conn){
-    //    if(err){
-    //        return next(err);
-    //    }else{
-    //        console.log(req.body);
-    //        conn.query("select * from user_info where emTel = ?", [req.body.newpassword,req.body.emTel],function(err,result){
-    //            if(err){
-    //                return next(err);
-    //            }else if(result[0]==null||result[0]==""){
-    //                return res.send({noUser:"1"});
-    //            }
-    //        });
-    //    }
-    //});
     var idCode = "";
     for(var i = 0;i<4;i++){
         idCode += Math.floor(Math.random()*10);
