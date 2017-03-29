@@ -28,7 +28,7 @@ router.post('/reset',function(req,res,next){
         }else {
             conn.query("update user_info set password='123456' where emTel=?", [req.body.emTel],function(err,result){
                 if(err){
-
+                    console.log(err);
                     return next(err);
 
                 }else {
@@ -38,7 +38,7 @@ router.post('/reset',function(req,res,next){
             });
         }
     })
-})
+});
 router.post('/confirm', function(req, res, next) {
     var idCode = "";
     for(var i = 0;i<4;i++){
