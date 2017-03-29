@@ -26,6 +26,7 @@ router.post('/reset',function(req,res,next){
         if(err){
             return next(err);
         }else {
+            console.log(req.body);
             conn.query("update user_info set password='123456' where emTel=?", [req.body.emTel],function(err,result){
                 if(err){
                     console.log(err);
