@@ -22,7 +22,7 @@ router.post('/',function(req,res,next){
     });
 });
 router.post('/reset',function(req,res,next){
-    req.getConnections(function(err,conn){
+    req.getConnection(function(err,conn){
         if(err){
             return next(err);
         }else {
