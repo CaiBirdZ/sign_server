@@ -1,0 +1,24 @@
+//
+   Created by 11952 on 2017/3/28.
+
+extends layout
+block content
+
+    div#contentRight
+        div#option
+            select
+                each data in result
+                    option=data.cpName
+            input(type='button',value='查询',onclick='query()')
+            input(type='button',value='查询全部',onclick='queryAll()')
+        table#table
+            tr
+                td='公司ID'
+                td='公司名或子公司名'
+                td='公司总部名'
+            each data in result
+                tr.queryAll.displayCtrl
+                    td=data.cpID
+                    td=data.cpName
+                    td=data.cpHQ
+        input(type='button',value='修改',onclick='modifyCpInfo()').displayCtrl#modify

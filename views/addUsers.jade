@@ -1,0 +1,24 @@
+//
+   Created by 11952 on 2017/4/5.
+
+extends layout
+block content
+    div#contentRight
+        div(style='margin:5% 0 0 30%')
+            div
+                span 员工号：
+                input#jobNo(type="text")
+            div
+                span 姓名：
+                input#emName(type='text')
+            div
+                span 部门：
+                input#department(type='text')
+            div
+                span 手机号码：
+                input#emTel(type='text')
+            div
+                span E-mail：
+                input#email(type='text')
+            div
+                input(type='button',value='添加',onclick='add()')

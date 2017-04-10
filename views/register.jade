@@ -1,0 +1,22 @@
+//
+   Created by 11952 on 2017/3/27.
+
+doctype html
+html
+    head
+        //title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        script(src='/javascripts/jquery-3.1.1.js')
+        script(src='/javascripts/registerCtrl.js')
+
+    body
+        block content
+            span 账号：
+            input#userNum(onblur='userRepeat()')
+            span 密码：
+            input#registerPw(type='password',onblur='pwIsLegal()')
+            span 确认密码：
+            input#confirmPw(type='password',onblur='isEqually()')
+            span 公司密钥：
+            input#cpKey(onblur='cpKeyRepeat()')
+            input(type='button',onclick='register()',value='注册')

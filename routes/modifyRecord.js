@@ -10,18 +10,34 @@ router.post('/', function(req, res, next) {
         if(err){
             return next(err);
         }else{
+            var beforeTime;
+            var beforeOut;
             console.log(req.body);
             try {
-                conn.query("update err_record set afterTime=?,afterOut=?,marks='已申请' where jobNo=?,signDate=?",[req.body.signTime,req.body.signOut,req.body.jobNo,req.body.date],function(err,result){
+                conn.query("select signTime,signOut from sylg123sign_record where jobNo = ? AND signDate = ?",[req.body.jobNo,req.body.date],function(err,result){
                     if(err){
-                        return res.send({code:"111"});
+                        next(err);
                     }else{
-                        return res.send({code:"000"});
+                        beforeTime = result[0].signTime;
+                        beforeOut = result[0].signOut;
+                        try {
+                            conn.query("insert into err_record values(?,?,?,?,?,?,'已申请')",[req.body.jobNo,req.body.date,beforeTime,beforeOut,req.body.signTime,req.body.signOut],function(err,result){
+                                if(err){
+                                    return res.send({code:"111"});
+                                }else{
+                                    return res.send({code:"000"});
+                                }
+                            });
+                        }catch (e){
+                            return res.send({code:"111"});
+                        }
+
                     }
                 });
             }catch (e){
-                return res.send({code:"111"});
+                console.log(e);
             }
+            //console.log(req.body);
 
         }
     });

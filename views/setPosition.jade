@@ -1,0 +1,9 @@
+extends layout
+block content
+    div#contentRight
+        div#posOption
+            select
+                each data in result
+                    option=data.cpName
+        div#allmap
+            script(type="text/javascript",src='/javascripts/setPosition.js')

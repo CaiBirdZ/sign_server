@@ -12,6 +12,16 @@ var alterInfo = require('./routes/alterInfo');
 var record = require('./routes/record');
 var signOut = require('./routes/signOut');
 var changePw = require('./routes/changePw');
+var optionIndex = require('./routes/optionIndex');
+var setPosition = require('./routes/setPosition');
+var rootRegister = require('./routes/rootRegister');
+var setCompanyInfo = require('./routes/setCompanyInfo');
+var forgotPassword = require('./routes/forgotPassword');
+var changePassword = require('./routes/changePassword');
+var addUsers= require('./routes/addUsers');
+var exceptionQuery= require('./routes/exceptionQuery');
+var modifyConfirm = require('./routes/modifyConfirm');
+var queryRecord = require('./routes/queryRecord');
 
 var app = express();
 //数据库链接
@@ -43,7 +53,16 @@ app.use('/record',record);
 app.use('/signOut', signOut);
 app.use('/alterInfo', alterInfo);
 app.use('/changePw',changePw);
-
+app.use('/optionIndex',optionIndex);
+app.use('/setPosition',setPosition);
+app.use('/register',rootRegister);
+app.use('/setCompanyInfo',setCompanyInfo);
+app.use('/changePassword',changePassword);
+app.use('/forgotPassword',forgotPassword);
+app.use('/addUsers',addUsers);
+app.use('/exceptionQuery',exceptionQuery);
+app.use('/modifyConfirm',modifyConfirm);
+app.use('/queryRecord',queryRecord);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,5 +1,23 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+doctype html
+html
+    head
+        //title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+        script(src='/javascripts/jquery-3.1.1.js')
+        script(src='/javascripts/loginController.js')
+    body
+        block content
+            div#loginRect
+                div.userIn
+                    span 账号：
+                    input#userNo(type="text")
+                div.userIn
+                    span 密码：
+                    input#password(type='password')
+                div.userIn(style='margin-top:0')
+                    a(href='http://localhost:8080/changePassword',style="text-decoration:none;color:black;float:left") 修改密码
+                    a(href='http://localhost:8080/forgotPassword',style="text-decoration:none;color:black;float:right") 忘记密码
+                div.buttonDiv
+                    div#signIn(onclick='signIn()') 登陆
+                    a(href='http://localhost:8080/register',style="text-decoration:none;color:black")
+                        div#Register 注册

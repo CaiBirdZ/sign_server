@@ -1,0 +1,29 @@
+//
+   Created by 11952 on 2017/4/5.
+
+extends layout
+block content
+
+    div#contentRight
+        div#option
+            span='员工号'
+            input#jobNo(type='text')
+            input(type='button',value='按员工号查询',onclick='byJobNo()')
+            span='部门'
+            input#department(type='text')
+            input(type='button',value='按部门查询',onclick='byDepartment()')
+            span='日期'
+            input#signDate(type='text',placeholder='格式为2017/04/01')
+            input(type='button',value='按日期查询',onclick='bySignDate()')
+        div#buttonF
+            input(type='button',value='按员工号|日期查询',onclick='byJobNoAndSignDate()')
+            input(type='button',value='按部门|日期查询',onclick='byDepartmentAndSignDate()')
+        table#recordTable
+            tr
+                td='员工号'
+                td='姓名'
+                td='部门'
+                td='日期'
+                td='签到时间'
+                td='签出时间'
+        input(type='button',value='导出',onclick='').displayCtrl#modify
