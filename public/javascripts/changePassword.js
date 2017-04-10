@@ -33,21 +33,21 @@ function submit(){
         alert('两次密码输入不一致！');
         return false;
     }
-    $.post('http://localhost:8080/register/userRepeat',{userNum:userNo},function(data){
+    $.post('http://118.89.233.175:80/register/userRepeat',{userNum:userNo},function(data){
         if(data.code==='0'){
             alert('用户名不存在！');
             //err = true;
             return false;
         }
     });
-    $.post("http://localhost:8080/login",{userNo:userNo,password:oldPassword}).then(function (result){
+    $.post("http://118.89.233.175:80/login",{userNo:userNo,password:oldPassword}).then(function (result){
         if(result.code !== "1"){
             alert('密码错误！');
             //err = true;
             return false;
         }
     });
-    $.post('http://localhost:8080/changePassword/cpKeyExit',{userNum:userNo,cpKey:cpKey}).then(function(data){
+    $.post('http://118.89.233.175:80/changePassword/cpKeyExit',{userNum:userNo,cpKey:cpKey}).then(function(data){
         if(data.code!='1'){
             alert('用户密钥错误');
             return false;
@@ -56,10 +56,10 @@ function submit(){
     //if(!err){
     //    return false;
     //}
-    $.post('http://localhost:8080/changePassword/sure',{userNum:userNo,password:newPassword},function(data){
+    $.post('http://118.89.233.175:80/changePassword/sure',{userNum:userNo,password:newPassword},function(data){
         if(data.code=='1'){
             alert('修改成功');
-            location.href = "http://localhost:8080/optionIndex";
+            location.href = "http://118.89.233.175:80/optionIndex";
             return true;
         }else{
             alert('修改失败请重试');

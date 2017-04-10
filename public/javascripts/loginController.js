@@ -22,11 +22,11 @@ var signIn = function(){
         return false;
     }
 
-    $.post("http://localhost:8080/login",{userNo:userNo,password:password},onSuccess);
+    $.post("http://118.89.233.175:80/login",{userNo:userNo,password:password},onSuccess);
     function onSuccess(result){
         if(result.code == "1"){
             window.localStorage.setItem('userInfo',JSON.stringify(result.result));
-            location.href = "http://localhost:8080/optionIndex";
+            location.href = "http://118.89.233.175:80/optionIndex";
         }else if(result.code =="0"){
             alert("账号/密码错误！");
         }

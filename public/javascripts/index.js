@@ -4,18 +4,18 @@
 
 $(document).ready(function(){
     if(window.localStorage.getItem('userInfo')===null||window.localStorage.getItem('userInfo')===''){
-        location.href = 'http://localhost:8080';
+        location.href = 'http://118.89.233.175:80';
     }
 })
 
 var getData = function(){
     var userInfo = JSON.parse(window.localStorage.getItem('userInfo'));
-    $.post('http://localhost:8080/setCompanyInfo/getData',{userNum:userInfo},function(data){
+    $.post('http://118.89.233.175:80/setCompanyInfo/getData',{userNum:userInfo},function(data){
     });
 }
 var query = function(){
     var selectCpName = $('option:selected', '#option').val();
-    $.post('http://localhost:8080/setCompanyInfo/query',{cpName:selectCpName},function(data){
+    $.post('http://118.89.233.175:80/setCompanyInfo/query',{cpName:selectCpName},function(data){
         if(data){
             //location.href='http://localhost:8080/setCompanyInfo';
             //$('.query').removeClass('displayCtrl');
@@ -53,7 +53,7 @@ var modifyCpInfo = function(){
         alert("总部名不能为空");
         return false;
     }
-    $.post('http://localhost:8080/setCompanyInfo/cpIDRepeat',{cpID:cpID},function(data){
+    $.post('http://118.89.233.175:80/setCompanyInfo/cpIDRepeat',{cpID:cpID},function(data){
         if(data.code=='1'){
             alert("公司ID已被占用");
             err = '0';
@@ -63,7 +63,7 @@ var modifyCpInfo = function(){
     if(err=='0'){
         return false;
     }
-    $.post('http://localhost:8080/setCompanyInfo/cpNameRepeat',{cpName:cpName},function(data){
+    $.post('http://118.89.233.175:80/setCompanyInfo/cpNameRepeat',{cpName:cpName},function(data){
         if(data.code=='1'){
             alert("公司名已被占用");
             err = '0';
@@ -73,7 +73,7 @@ var modifyCpInfo = function(){
     if(err=='0'){
         return false;
     }
-    $.post('http://localhost:8080/setCompanyInfo/cpHQExist',{cpHQ:cpHQ},function(data){
+    $.post('http://118.89.233.175:80/setCompanyInfo/cpHQExist',{cpHQ:cpHQ},function(data){
         if(data.code=='1'){
             alert("此总部名不存在");
             err = '0';
@@ -84,7 +84,7 @@ var modifyCpInfo = function(){
         return false;
     }
 
-    $.post('http://localhost:8080/setCompanyInfo/modifyCpInfo',{cpID:cpID,cpName:cpName,cpHQ:cpHQ,oldCpName:oldCpName},function(data){
+    $.post('http://118.89.233.175:80/setCompanyInfo/modifyCpInfo',{cpID:cpID,cpName:cpName,cpHQ:cpHQ,oldCpName:oldCpName},function(data){
         if(data.code=='1'){
             alert("修改成功");
         }else{
@@ -96,7 +96,7 @@ var modifyCpInfo = function(){
 
 function  setPosHref(){
     var userNum = JSON.parse(window.localStorage.getItem("userInfo"));
-    location.href="http://localhost:8080/setPosition?userNum="+userNum;
+    location.href="http://118.89.233.175:80/setPosition?userNum="+userNum;
 }
 
 
@@ -107,7 +107,7 @@ $(function(){
         var signDate = $('#modifyTable').find('tr').eq(tr.rowIndex).find('td').eq(3).text();
         var signTime = $('#modifyTable').find('tr').eq(tr.rowIndex).find('td').eq(4).text();
         var signOut = $('#modifyTable').find('tr').eq(tr.rowIndex).find('td').eq(5).text();
-        $.post('http://localhost:8080/modifyConfirm/sure',{jobNo:jobNo,signDate:signDate,signTime:signTime,signOut:signOut},function(data){
+        $.post('http://118.89.233.175:80/modifyConfirm/sure',{jobNo:jobNo,signDate:signDate,signTime:signTime,signOut:signOut},function(data){
             if(data.code=='1'){
                 alert("成功");
             }else{

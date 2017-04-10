@@ -23,7 +23,7 @@ var contextMenu = new AMap.ContextMenu();
 //单击左键设置坐标
 contextMenu.addItem("设置为公司坐标", function(e) {
     var cpName = $('option:selected', '#posOption').val();
-    $.post('http://localhost:8080/setPosition/set',{cpName:cpName,cpPosLon: contextMenuPositon.getLng(),cpPosLat:contextMenuPositon.getLat()},function(data){
+    $.post('http://118.89.233.175:80/setPosition/set',{cpName:cpName,cpPosLon: contextMenuPositon.getLng(),cpPosLat:contextMenuPositon.getLat()},function(data){
         if(data.code=='1'){
             alert("修改成功");
         }else{

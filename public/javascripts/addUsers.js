@@ -39,7 +39,7 @@ function add(){
         alert("请输入正确的邮箱");
         return false;
     }
-    $.post('http://localhost:8080/addUsers/add',{jobNo:jobNo,emName:emName,department:department,emTel:emTel,email:email},function(data){
+    $.post('http://118.89.233.175:80/addUsers/add',{jobNo:jobNo,emName:emName,department:department,emTel:emTel,email:email},function(data){
         if(data.code=='1'){
             alert('添加成功');
             return true;

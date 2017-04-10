@@ -7,7 +7,7 @@ function byJobNo(){
         alert('请输入员工号');
         return false;
     }
-    $.post('http://localhost:8080/queryRecord/byJobNo',{jobNo:jobNo},function(data){
+    $.post('http://118.89.233.175:80/queryRecord/byJobNo',{jobNo:jobNo},function(data){
         if(data.code=='1'){
             var array=data.result;
             for(var i in array){
@@ -25,7 +25,7 @@ function byDepartment(){
         alert('请输入部门');
         return false;
     }
-    $.post('http://localhost:8080/queryRecord/byDepartment',{department:department},function(data){
+    $.post('http://118.89.233.175:80/queryRecord/byDepartment',{department:department},function(data){
         if(data.code=='1'){
             var array=data.result;
             for(var i in array){
@@ -42,7 +42,7 @@ function bySignDate(){
         alert('请输入日期');
         return false;
     }
-    $.post('http://localhost:8080/queryRecord/bySignDate',{signDate:signDate},function(data){
+    $.post('http://118.89.233.175:80/queryRecord/bySignDate',{signDate:signDate},function(data){
         if(data.code=='1'){
             var array=data.result;
             for(var i in array){
@@ -65,7 +65,7 @@ function byJobNoAndSignDate(){
         alert('请输入日期');
         return false;
     }
-    $.post('http://localhost:8080/queryRecord/byJobNoAndSignDate',{jobNo:jobNo,signDate:signDate},function(data){
+    $.post('http://118.89.233.175:80/queryRecord/byJobNoAndSignDate',{jobNo:jobNo,signDate:signDate},function(data){
         if(data.code=='1'){
             var array=data.result;
             for(var i in array){
@@ -88,7 +88,7 @@ function byDepartmentAndSignDate(){
         alert('请输入日期');
         return false;
     }
-    $.post('http://localhost:8080/queryRecord/byDepartmentAndSignDate',{department:department,signDate:signDate},function(data){
+    $.post('http://118.89.233.175:80/queryRecord/byDepartmentAndSignDate',{department:department,signDate:signDate},function(data){
         if(data.code=='1'){
             var array=data.result;
             for(var i in array){

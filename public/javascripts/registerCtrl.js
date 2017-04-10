@@ -20,7 +20,7 @@ var userRepeat=function(){
     }else{
         errCode=false;
     }
-    $.post('http://localhost:8080/register/userRepeat',{userNum:userNum},function(data){
+    $.post('http://118.89.233.175:80/register/userRepeat',{userNum:userNum},function(data){
         if(data.code=='1'){
             alert('用户名已存在！');
             errCode=true;
@@ -42,7 +42,7 @@ var cpKeyRepeat=function(){
         errCode=false;
     }
 
-    $.post('http://localhost:8080/register/cpKeyExist',{cpKey:cpKey},function(data){
+    $.post('http://118.89.233.175:80/register/cpKeyExist',{cpKey:cpKey},function(data){
         if(data.code=='0'){
             alert('cpKey不存在！');
             errCode=true;
@@ -51,7 +51,7 @@ var cpKeyRepeat=function(){
             errCode=false;
         }
     });
-    $.post('http://localhost:8080/register/cpKeyRepeat',{cpKey:cpKey},function(data){
+    $.post('http://118.89.233.175:80/register/cpKeyRepeat',{cpKey:cpKey},function(data){
         if(data.code=='1'){
             alert('cpKey已被使用！');
             errCode=true;
@@ -105,9 +105,9 @@ var register = function(){
         return false;
     }
 
-    $.post('http://localhost:8080/register/sure',{userNum:userNum,cpKey:cpKey,password:registerPw},function(data){
+    $.post('http://118.89.233.175:80/register/sure',{userNum:userNum,cpKey:cpKey,password:registerPw},function(data){
         if(data.code=='1'){
-            location.href="http://localhost:8080/optionIndex";
+            location.href="http://118.89.233.175:80/optionIndex";
         }else{
             alert("注册失败");
         }
