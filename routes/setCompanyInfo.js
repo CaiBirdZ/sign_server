@@ -3,10 +3,24 @@
  */
 var express = require('express');
 var router = express.Router();
-var postData = [];
+var url = require('url');
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('setCompanyInfo',{result:postData});
+    req.getConnection(function(err,conn){
+        if(err){
+            return next(err);
+        }else{
+            var userNum=url.parse(req.url,true).query.userNum;
+            conn.query("select cpID,cpName,cpHQ from company_data,rootuser where rootuser.userNum=? and company_data.cpKey=rootuser.cpKey",[userNum],function(err,result){
+                if(err){
+                    console.log(err);
+                    return next(err);
+                }else{
+                    return res.render('setCompanyInfo',{result:result});
+                }
+            });
+        }
+    });
 });
 
 router.post('/query',function(req, res, next){
@@ -94,26 +108,6 @@ router.post('/cpNameRepeat',function(req, res, next) {
     });
 });
 
-
-router.post('/getData',function(req, res, next){
-    req.getConnection(function(err,conn){
-        if(err){
-            return next(err);
-        }else{
-            console.log(req.body);
-            conn.query("select cpID,cpName,cpHQ from company_data,rootuser where rootuser.userNum=? and company_data.cpKey=rootuser.cpKey",[req.body.userNum],function(err,result){
-                if(err){
-                    console.log(err);
-                    return next(err);
-                }else{
-                    postData=result;
-                    console.log(result);
-                    return res.send({data:result});
-                }
-            });
-        }
-    });
-});
 
 router.post('/modifyCpInfo',function(req, res, next){
     req.getConnection(function(err,conn){

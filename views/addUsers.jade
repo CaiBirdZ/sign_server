@@ -4,21 +4,21 @@
 extends layout
 block content
     div#contentRight
-        div(style='margin:5% 0 0 30%')
+        div.Rect(style='margin:5% 0 0 30%')
             div
-                span 员工号：
-                input#jobNo(type="text")
+                span.tipText 员工号
+                input.usedInput#jobNo(type="text")
             div
-                span 姓名：
-                input#emName(type='text')
+                span.tipText 姓名
+                input.usedInput#emName(type='text',style='margin-left: 8%;')
             div
-                span 部门：
-                input#department(type='text')
+                span.tipText 部门
+                input.usedInput#department(type='text',style='margin-left: 8%;')
             div
-                span 手机号码：
-                input#emTel(type='text')
+                span.tipText 手机号码
+                input.usedInput#emTel(type='text',style='margin-left: 2%;')
             div
-                span E-mail：
-                input#email(type='text')
+                span.tipText E-mail
+                input.usedInput#email(type='text')
             div
-                input(type='button',value='添加',onclick='add()')
+                button.usedButton(onclick='add()') 添加

@@ -11,12 +11,17 @@ html
 
     body
         block content
-            span 账号：
-            input#userNum(onblur='userRepeat()')
-            span 密码：
-            input#registerPw(type='password',onblur='pwIsLegal()')
-            span 确认密码：
-            input#confirmPw(type='password',onblur='isEqually()')
-            span 公司密钥：
-            input#cpKey(onblur='cpKeyRepeat()')
-            input(type='button',onclick='register()',value='注册')
+            div.Rect
+                div
+                    span.tipText 账号
+                    input.usedInput#userNum(style='margin-left:10%')
+                div
+                    span.tipText 密码
+                    input.usedInput#registerPw(type='password',style='margin:3% 0 0 10%')
+                div
+                    span.tipText 确认密码
+                    input.usedInput#confirmPw(type='password',style='margin:3% 0 0 5%')
+                div
+                    span.tipText(style='color:#c73d4f') 公司密钥
+                    input.usedInput#cpKey(style='border: 3px solid #c73d4f')
+                button.usedButton(onclick='register()') 注册

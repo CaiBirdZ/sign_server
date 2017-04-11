@@ -22,7 +22,7 @@ var signIn = function(){
         return false;
     }
 
-    $.post("http://118.89.233.175:80/login",{userNo:userNo,password:password},onSuccess);
+    $.post("http://localhost:8080/login",{userNo:userNo,password:password},onSuccess);
     function onSuccess(result){
         if(result.code == "1"){
             window.localStorage.setItem('userInfo',JSON.stringify(result.result));

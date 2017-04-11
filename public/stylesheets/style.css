@@ -7,9 +7,50 @@ a {
   color: #00B7FF;
 }
 #loginRect{
-    width: 30%;
-    height: auto;
-    margin: 10% 0 0 35%;
+    width: 40%;
+    height: 30em;
+    margin: 2% 0 0 30%;
+    background-image: url("../images/loginBk.png");
+    background-size: 100% 100%;
+}
+.Rect{
+    width: 40%;
+    height: 30em;
+    margin: 7% 0 0 30%;
+    background-size: 100% 100%;
+    font-family: 微软雅黑;
+
+}
+input{
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+.tipText{
+    color: #416398;
+    font-family: 微软雅黑;
+    font-size: 1.2em;
+}
+#logo{
+    width: 24%;
+    height: 5em;
+    margin: 5% 0 0 38%;
+    background-image: url("../images/loginBKLogo.png");
+    background-size: 100% 100%;
+}
+.loginLogo{
+    height: 2.5em;
+    width: 9%;
+    background-image: url('../images/userLogo.png');
+    background-size: 100% 100%;
+    float: left;
+    margin-top: 10%;
+}
+.pwLogo{
+    height: 2.5em;
+    width: 9%;
+    background-image: url('../images/passwordLogo.png');
+    background-size: 100% 100%;
+    float: left;
+    margin-top: 3%;
 }
 .userIn{
     width: 60%;
@@ -17,35 +58,77 @@ a {
     height: 4em;
     margin-top: 10%;
 }
+.userInput{
+    width: 60%;
+    margin-left: 20%;
+    height: 4em;
+    padding-top: 10%;
+}
+.pwInput{
+    width: 60%;
+    margin-left: 20%;
+    height: 2em;
+    padding-top: 5%;
+    font-family: 微软雅黑;
+}
+.usedInput{
+    width: 60%;
+    margin-left: 5%;
+    height: 2em;
+    margin-top: 10%;
+    outline:none;
+    border-radius: 0.5em;
+    border: 3px solid #87a6d2;
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+}
 #userNo{
     width: 80%;
     margin-left: 5%;
     height: 2em;
     margin-top: 10%;
+    float: left;
+    outline:none;
+    border-radius: 0.5em;
+    border: 3px solid #87a6d2;
+    -webkit-box-shadow: 0 0 0 1000px white inset;
 }
 #password{
     width: 80%;
     margin-left: 5%;
     height: 2em;
     margin-top: 3%;
+    float: left;
+    outline:none;
+    border-radius: 0.5em;
+    border: 3px solid #87a6d2;
+    -webkit-appearance: normal;
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+.textHref{
+    color:#9bbff8;
+    margin-top:0;
+    text-decoration:none
 }
 #signIn {
     float: left;
     height: 2em;
-    width: 30%;
-    background-color: blue;
+    width: 23%;
+    background-color: #87a7d2;
     margin: 5% 0 0 20%;
     padding: 0.5em 0 0 0;
     text-align: center;
+    color: white;
+    border-radius: 0.5em;
 }
 #Register {
-    float: left;
+    float: right;
     height: 2em;
-    width: 30%;
-    background-color: blue;
-    margin: 5% 0 0 10%;
+    width: 23%;
+    background-color: #e59495;
+    margin: 5% 23% 0 10%;
     padding: 0.5em 0 0 0;
     text-align: center;
+    border-radius: 0.5em;
 }
 .buttonDiv{
     height: 3em;
@@ -53,9 +136,18 @@ a {
     margin: 0;
     font-size: 1.5em;
 }
+
+.indexBk{
+    width: 30%;
+    margin: 10% 0 0 35%;
+    height: 30em;
+    background-image: url(../images/indexBk.png);
+    background-size: 100% 100%;
+}
 #allmap{
+    margin-top: 5%;
     width: 100%;
-    height: 60%;
+    height: 80%;
 }
 #setPosition{
     width: 10%;
@@ -72,28 +164,8 @@ a {
     height: 3em;
     margin:2% 0 0 20% ;
 }
-#table{
-    width: 60%;
-    margin: 5% 0 0 20%;
-    text-align: center;
-    border-collapse: collapse;
-    border: 1px solid silver;
-    font-size: 1em;
-    font-family:微软雅黑;
-    color: black;
-}
-#recordTable{
-    width: 60%;
-    margin: 5% 0 0 20%;
-    text-align: center;
-    border-collapse: collapse;
-    border: 1px solid silver;
-    font-size: 1em;
-    font-family:微软雅黑;
-    color: black;
-}
 td,tr{
-    border: 1px solid silver;
+    border: 1px solid #cad8ec;
 }
 #table  input{
     text-align: center;
@@ -108,15 +180,63 @@ td,tr{
     display: none;
 }
 #modify{
-    margin-left: 76%;
+    margin-left: 70%;
 }
-#modifyTable{
+.usedButton{
+    border: none;
+    background: #87a7d2 repeat-x;
+    color: white;
+    width: 30%;
+    height: 3em;
+    outline: none;
+    border-radius: 0.5em;
+    font-size: 1.3em;
+    margin: 5% 0 0 25%;
+}
+.usedSmallButton{
+    border: none;
+    background: #87a7d2 repeat-x;
+    color: white;
+    width: 10%;
+    height: 1.5em;
+    outline: none;
+    border-radius: 0.5em;
+    font-size: 1.2em;
+    margin: 5% 0 0 3%;
+}
+.usedSelect{
+    border-radius: 0.5em;
+    border: 2px solid #a0b9dd;
+    outline: none;
+    height: 2.2em;
+    width: 10%;
+    margin: 5% 0 0 0;
+}
+table{
+    border-radius: 0.3em;
+    border: 2px solid #5984c4;
     width: 60%;
     margin: 5% 0 0 20%;
     text-align: center;
     border-collapse: collapse;
-    border: 1px solid silver;
     font-size: 1em;
     font-family:微软雅黑;
-    color: black;
+    color: #5674a7;
+}
+.firstTr{
+    font-size: 1.3em;
+    font-family:微软雅黑;
+}
+#posOption{
+    margin-left: 30%;
+}
+.useInput{
+    width: 20%;
+    margin-left: 0;
+    height: 2em;
+    margin-top: 2%;
+    outline:none;
+    border-radius: 0.5em;
+    border: 3px solid #87a6d2;
+    -webkit-box-shadow: 0 0 0 1000px white inset;
 }

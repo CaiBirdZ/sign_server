@@ -4,7 +4,7 @@
 'use strict';
 function submit(){
     //var err
-    var userNo=$('#userNo').val();
+    var userNo=$('#usernum').val();
     var oldPassword=$('#oldPassword').val();
     var newPassword=$('#newPassword').val();
     var confirmPassword=$('#confirmPassword').val();

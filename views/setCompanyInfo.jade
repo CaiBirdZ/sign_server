@@ -6,19 +6,19 @@ block content
 
     div#contentRight
         div#option
-            select
+            select.usedSelect
                 each data in result
                     option=data.cpName
-            input(type='button',value='查询',onclick='query()')
-            input(type='button',value='查询全部',onclick='queryAll()')
+            button.usedSmallButton(onclick='query()') 查询
+            button.usedSmallButton(onclick='queryAll()') 查询全部
         table#table
-            tr
+            tr.firstTr
                 td='公司ID'
                 td='公司名或子公司名'
                 td='公司总部名'
             each data in result
-                tr.queryAll.displayCtrl
+                tr.queryAll.displayCtrl.elseTr
                     td=data.cpID
                     td=data.cpName
                     td=data.cpHQ
-        input(type='button',value='修改',onclick='modifyCpInfo()').displayCtrl#modify
+        button(onclick='modifyCpInfo()').displayCtrl.usedSmallButton#modify 修改

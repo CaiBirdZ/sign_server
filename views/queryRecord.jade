@@ -6,19 +6,19 @@ block content
 
     div#contentRight
         div#option
-            span='员工号'
-            input#jobNo(type='text')
-            input(type='button',value='按员工号查询',onclick='byJobNo()')
-            span='部门'
-            input#department(type='text')
-            input(type='button',value='按部门查询',onclick='byDepartment()')
-            span='日期'
-            input#signDate(type='text',placeholder='格式为2017/04/01')
-            input(type='button',value='按日期查询',onclick='bySignDate()')
-        div#buttonF
-            input(type='button',value='按员工号|日期查询',onclick='byJobNoAndSignDate()')
-            input(type='button',value='按部门|日期查询',onclick='byDepartmentAndSignDate()')
-        table#recordTable
+            span.tipText='员工号'
+            input.useInput#jobNo(type='text')
+            button.usedSmallButton(style='margin : 2% 0 0 0;font-size:0.8em',onclick='byJobNo()') 按员工号查询
+            span.tipText(style='margin-left:5%')='部门'
+            input.useInput#department(type='text')
+            button.usedSmallButton(style='margin : 2% 0 0 0;font-size:0.8em',onclick='byDepartment()') 按部门查询
+            div
+                span.tipText='日期'
+                input.useInput#signDate(type='text',placeholder='格式为2017/04/01',style='margin : 2% 0 0 0;font-size:0.8em')
+                button.usedSmallButton(style='margin : 2% 0 0 0;font-size:0.8em',onclick='bySignDate()') 按日期查询
+                button.usedSmallButton(style='margin : 2% 0 0 5%;font-size:0.8em',onclick='byJobNoAndSignDate()') 按员工号|日期查询
+                button.usedSmallButton(style='margin : 2% 0 0 5%;font-size:0.8em',onclick='byDepartmentAndSignDate()') 按部门|日期查询
+        table
             tr
                 td='员工号'
                 td='姓名'

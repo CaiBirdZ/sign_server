@@ -10,8 +10,7 @@ $(document).ready(function(){
 
 var getData = function(){
     var userInfo = JSON.parse(window.localStorage.getItem('userInfo'));
-    $.post('http://118.89.233.175:80/setCompanyInfo/getData',{userNum:userInfo},function(data){
-    });
+    location.href='http://118.89.233.175:80/setCompanyInfo?userNum='+userInfo;
 }
 var query = function(){
     var selectCpName = $('option:selected', '#option').val();
@@ -30,7 +29,6 @@ var query = function(){
 }
 
 var queryAll = function(){
-    //location.href='http://localhost:8080/setCompanyInfo';
     $('#query').remove();
     $('#modify').addClass('displayCtrl');
     $('.queryAll').removeClass('displayCtrl');
@@ -98,7 +96,6 @@ function  setPosHref(){
     var userNum = JSON.parse(window.localStorage.getItem("userInfo"));
     location.href="http://118.89.233.175:80/setPosition?userNum="+userNum;
 }
-
 
 $(function(){
     $('#modifyTable input').click(function(){

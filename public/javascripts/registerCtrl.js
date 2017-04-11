@@ -98,9 +98,10 @@ var register = function(){
     var cpKey = $('#cpKey').val();
     var registerPw=$('#registerPw').val();
     var confirmPw=$('#confirmPw').val();
-    if(userNum==''||cpKey==''||registerPw==''||confirmPw==''){
-        return false;
-    }
+    userRepeat();
+    pwIsLegal();
+    cpKeyRepeat();
+    isEqually();
     if(errCode){
         return false;
     }
