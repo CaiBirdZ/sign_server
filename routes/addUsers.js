@@ -16,6 +16,7 @@ router.post('/add',function(req,res,next){
             console.log(req.body);
             conn.query("insert into user_info(jobNo,emName,department,emTel,email,cpID) values(?,?,?,?,?,'sylg123')", [req.body.jobNo,req.body.emName,req.body.department,req.body.emTel,req.body.email], function (err, result) {
                 if(err){
+                    console.log(err);
                     return next(err);
                 }else {
                     return res.send({code:1});
