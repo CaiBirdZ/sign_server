@@ -51,36 +51,36 @@ var modifyCpInfo = function(){
         alert("总部名不能为空");
         return false;
     }
-    $.post('http://118.89.233.175:80/setCompanyInfo/cpIDRepeat',{cpID:cpID},function(data){
-        if(data.code=='1'){
-            alert("公司ID已被占用");
-            err = '0';
-            return false;
-        }
-    });
-    if(err=='0'){
-        return false;
-    }
-    $.post('http://118.89.233.175:80/setCompanyInfo/cpNameRepeat',{cpName:cpName},function(data){
-        if(data.code=='1'){
-            alert("公司名已被占用");
-            err = '0';
-            return false;
-        }
-    });
-    if(err=='0'){
-        return false;
-    }
-    $.post('http://118.89.233.175:80/setCompanyInfo/cpHQExist',{cpHQ:cpHQ},function(data){
-        if(data.code=='1'){
-            alert("此总部名不存在");
-            err = '0';
-            return false;
-        }
-    });
-    if(err=='0'){
-        return false;
-    }
+    //$.post('http://118.89.233.175:80/setCompanyInfo/cpIDRepeat',{cpID:cpID},function(data){
+    //    if(data.code=='1'){
+    //        alert("公司ID已被占用");
+    //        err = '0';
+    //        return false;
+    //    }
+    //});
+    //if(err=='0'){
+    //    return false;
+    //}
+    //$.post('http://118.89.233.175:80/setCompanyInfo/cpNameRepeat',{cpName:cpName},function(data){
+    //    if(data.code=='1'){
+    //        alert("公司名已被占用");
+    //        err = '0';
+    //        return false;
+    //    }
+    //});
+    //if(err=='0'){
+    //    return false;
+    //}
+    //$.post('http://118.89.233.175:80/setCompanyInfo/cpHQExist',{cpHQ:cpHQ},function(data){
+    //    if(data.code=='1'){
+    //        alert("此总部名不存在");
+    //        err = '0';
+    //        return false;
+    //    }
+    //});
+    //if(err=='0'){
+    //    return false;
+    //}
 
     $.post('http://118.89.233.175:80/setCompanyInfo/modifyCpInfo',{cpID:cpID,cpName:cpName,cpHQ:cpHQ,oldCpName:oldCpName},function(data){
         if(data.code=='1'){
