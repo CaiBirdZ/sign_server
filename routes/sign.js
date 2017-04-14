@@ -9,7 +9,7 @@ router.post('/', function(req, res, next) {
             }else{
                 console.log(req.body);
                 try {
-                    conn.query("insert into "+req.body.cpID+"sign_record(jobNo,signDate,time) values(?,?,?)",[req.body.jobNo,req.body.date,req.body.time],function(err,result){
+                    conn.query("insert into "+req.body.cpID+"sign_record(jobNo,signDate,signTime) values(?,?,?)",[req.body.jobNo,req.body.date,req.body.time],function(err,result){
                         if(err){
                             return res.send({code:"111"});
                         }else{
