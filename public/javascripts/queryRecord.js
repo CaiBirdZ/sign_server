@@ -100,116 +100,42 @@ function byDepartmentAndSignDate(){
     });
 }
 
-
-function ExportToExcel(inTblId, inWindow) {
-    try {
-        var allStr = "";
-        var curStr = "";
-        //alert("getXlsFromTbl");   
-        if (inTblId != null && inTblId != "" && inTblId != "null") {
-            curStr = getTblData(inTblId, inWindow);
-        }
-        if (curStr != null) {
-            allStr += curStr;
-        }
-        else {
-            alert("你要导出的表不存在！");
-            return;
-        }
-        var fileName = getExcelFileName();
-        doFileExport(fileName, allStr);
-    }
-    catch(e) {
-        alert("导出发生异常:" + e.name + "->" + e.description + "!");
-    }
-}
-function getTblData(inTbl, inWindow) {
-    var rows = 0;
-    //alert("getTblData is " + inWindow);   
-    var tblDocument = document;
-    if (!!inWindow && inWindow != "") {
-        if (!document.all(inWindow)) {
-            return null;
-        }
-        else {
-            tblDocument = eval(inWindow).document;
-        }
-    }
-    var curTbl = tblDocument.getElementById(inTbl);
-    var outStr = "";
-    if (curTbl != null) {
-        for (var j = 0; j < curTbl.rows.length; j++) {
-            //alert("j is " + j);   
-            for (var i = 0; i < curTbl.rows[j].cells.length; i++) {
-                //alert("i is " + i);   
-                if (i == 0 && rows > 0) {
-                    outStr += " \t";
-                    rows -= 1;
-                }
-                outStr += curTbl.rows[j].cells[i].innerText + "\t";
-                if (curTbl.rows[j].cells[i].colSpan > 1) {
-                    for (var k = 0; k < curTbl.rows[j].cells[i].colSpan - 1; k++) {
-                        outStr += " \t";
-                    }
-                }
-                if (i == 0) {
-                    if (rows == 0 && curTbl.rows[j].cells[i].rowSpan > 1) {
-                        rows = curTbl.rows[j].cells[i].rowSpan - 1;
-                    }
+function gethtml()
+{
+    var fTableElement,strcell,rows,cols,style,excelstr;
+    fTableElement = document.getElementById("exportToExel");
+    excelstr = "<html><head><!--<xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>工作表标题</x:Name><x:WorksheetOptions><x:print><x:ValidPrinterInfo /></x:print></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head>";
+    excelstr += "<table border='1'>";
+    for (var i = 0; i < fTableElement.rows.length; i++)
+    {
+        excelstr += "<tr>";
+        for (var  j = 0; j < fTableElement.rows[i].cells.length; j++)
+        {
+            rows = fTableElement.rows[i].cells[j].rowSpan;
+            cols = fTableElement.rows[i].cells[j].colSpan;
+            style = fTableElement.rows[i].cells[j].align;
+            excelstr += "<td colspan=" + cols + " rowspan=" + rows + " align=" + style + ">";
+            for(var k = 0; k < fTableElement.rows(i).cells(j).children.length;k++){
+                if(fTableElement.rows(i).cells(j).children[k].type == undefined){
+                    excelstr += fTableElement.rows(i).cells(j).children[k].innerText;
+                }else{
+                    excelstr += fTableElement.rows(i).cells(j).children[k].value;
                 }
             }
-            outStr += "\r\n";
+            excelstr += "</td>";
         }
+        excelstr += "</tr>";
     }
-    else {
-        outStr = null;
-        alert(inTbl + "不存在!");
-    }
-    return outStr;
+    excelstr += "</table></html>";
+
+    return excelstr;
 }
-function getExcelFileName() {
-    var d = new Date();
-    var curYear = d.getYear();
-    var curMonth = "" + (d.getMonth() + 1);
-    var curDate = "" + d.getDate();
-    var curHour = "" + d.getHours();
-    var curMinute = "" + d.getMinutes();
-    var curSecond = "" + d.getSeconds();
-    if (curMonth.length == 1) {
-        curMonth = "0" + curMonth;
-    }
-    if (curDate.length == 1) {
-        curDate = "0" + curDate;
-    }
-    if (curHour.length == 1) {
-        curHour = "0" + curHour;
-    }
-    if (curMinute.length == 1) {
-        curMinute = "0" + curMinute;
-    }
-    if (curSecond.length == 1) {
-        curSecond = "0" + curSecond;
-    }
-    var fileName = "leo_zhang" + "_" + curYear + curMonth + curDate + "_"
-        + curHour + curMinute + curSecond + ".csv";
-    //alert(fileName);   
-    return fileName;
+function ExportToExcel()
+{
+    var fHtml = gethtml();
+    var fSaveWindow = window.open();
+    fSaveWindow.document.open("text/html", "UTF-8");
+    fSaveWindow.document.write(fHtml);
+    fSaveWindow.document.execCommand("SaveAs", true, "table.xls");
+    fSaveWindow.close();
 }
-function doFileExport(inName, inStr) {
-    var xlsWin = null;
-    if (!!document.all("glbHideFrm")) {
-        xlsWin = glbHideFrm;
-    }
-    else {
-        var width = 6;
-        var height = 4;
-        var openPara = "left=" + (window.screen.width / 2 - width / 2)
-            + ",top=" + (window.screen.height / 2 - height / 2)
-            + ",scrollbars=no,width=" + width + ",height=" + height;
-        xlsWin = window.open("", "_blank", openPara);
-    }
-    xlsWin.document.write(inStr);
-    xlsWin.document.close();
-    xlsWin.document.execCommand('Saveas', true, inName);
-    xlsWin.close();
-}   
