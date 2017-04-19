@@ -101,17 +101,25 @@ function byDepartmentAndSignDate(){
 }
 
 function ExportToExcel() {
-    var elTable = $("#exportToExel");
-    var oRangeRef = document.body.createTextRange();
-    oRangeRef.moveToElementText(elTable);
-    oRangeRef.execCommand("Copy");
-    try {
-        var appExcel = new ActiveXObject("Excel.Application");
-    } catch (e) {
-        alert("If you change your mind, refresh your page  and select 'yes' to download excel.");
-        return;
+    var curTbl = document.getElementById('exportToExel');
+    var oXL = new ActiveXObject("Excel.Application");
+    //创建AX对象excel   
+    var oWB = oXL.Workbooks.Add();
+    //获取workbook对象   
+    var oSheet = oWB.ActiveSheet;
+    //激活当前sheet   
+    var Lenr = curTbl.rows.length;
+    //取得表格行数   
+    for (var i = 0; i < Lenr; i++)
+    {
+        var Lenc = curTbl.rows(i).cells.length;
+        //取得每行的列数   
+        for (var j = 0; j < Lenc; j++)
+        {
+            oSheet.Cells(i + 1, j + 1).value = curTbl.rows(i).cells(j).innerText;
+            //赋值   
+        }
     }
-    appExcel.Visible = true;
-    appExcel.Workbooks.Add().Worksheets.Item(1).Paste();
-    appExcel  = null;
+    oXL.Visible = true;
+    //设置excel可见属性   
 }
