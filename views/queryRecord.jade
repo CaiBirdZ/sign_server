@@ -18,6 +18,7 @@ block content
                 button.usedSmallButton(style='margin : 2% 0 0 0;font-size:0.8em',onclick='bySignDate()') 按日期查询
                 button.usedSmallButton(style='margin : 2% 0 0 5%;font-size:0.8em',onclick='byJobNoAndSignDate()') 按员工号|日期查询
                 button.usedSmallButton(style='margin : 2% 0 0 5%;font-size:0.8em',onclick='byDepartmentAndSignDate()') 按部门|日期查询
+                button.usedSmallButton(style='margin : 2% 0 0 5%;font-size:0.8em',onclick='ExportToExcel()') 导出
         table#exportToExel
             tr
                 td='员工号'
@@ -26,4 +27,4 @@ block content
                 td='日期'
                 td='签到时间'
                 td='签出时间'
-        input(type='button',value='导出',onclick='ExportToExcel()').displayCtrl#modify
+        button(onclick='ExportToExcel()') 导出
