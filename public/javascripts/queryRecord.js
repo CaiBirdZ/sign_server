@@ -109,7 +109,7 @@ function gethtml()
     for (var i = 0; i < $("#exportToExel").find('tr').length; i++)
     {
         excelstr += "<tr>";
-        for (var  j = 0; j < $("#exportToExel").rows[i].cells.length; j++)
+        for (var  j = 0; j < ($("#exportToExel td").length/$("#exportToExel tr").length); j++)
         {
             rows = $("#exportToExel").rows[i].cells[j].rowSpan;
             cols = $("#exportToExel").rows[i].cells[j].colSpan;
