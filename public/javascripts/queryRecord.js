@@ -11,7 +11,7 @@ function byJobNo(){
         if(data.code=='1'){
             var array=data.result;
             for(var i in array){
-                $('#recordTable').append("<tr><td>"+array[i].jobNo+"</td><td>"+array[i].emName+"</td><td>"+array[i].department+"</td><td>"+ array[i].signDate+"</td><td>"+ array[i].signTime+"</td><td>"+ array[i].signOut+"</td></tr>");
+                $('#exportToExel').append("<tr><td>"+array[i].jobNo+"</td><td>"+array[i].emName+"</td><td>"+array[i].department+"</td><td>"+ array[i].signDate+"</td><td>"+ array[i].signTime+"</td><td>"+ array[i].signOut+"</td></tr>");
             }
         }else{
             alert('查询失败，请重试');
@@ -29,7 +29,7 @@ function byDepartment(){
         if(data.code=='1'){
             var array=data.result;
             for(var i in array){
-                $('#recordTable').append("<tr><td>"+array[i].jobNo+"</td><td>"+array[i].emName+"</td><td>"+array[i].department+"</td><td>"+ array[i].signDate+"</td><td>"+ array[i].signTime+"</td><td>"+ array[i].signOut+"</td></tr>");
+                $('#exportToExel').append("<tr><td>"+array[i].jobNo+"</td><td>"+array[i].emName+"</td><td>"+array[i].department+"</td><td>"+ array[i].signDate+"</td><td>"+ array[i].signTime+"</td><td>"+ array[i].signOut+"</td></tr>");
             }
         }else{
             alert('查询失败，请重试');
@@ -69,7 +69,7 @@ function byJobNoAndSignDate(){
         if(data.code=='1'){
             var array=data.result;
             for(var i in array){
-                $('#recordTable').append("<tr><td>"+array[i].jobNo+"</td><td>"+array[i].emName+"</td><td>"+array[i].department+"</td><td>"+ array[i].signDate+"</td><td>"+ array[i].signTime+"</td><td>"+ array[i].signOut+"</td></tr>");
+                $('#exportToExel').append("<tr><td>"+array[i].jobNo+"</td><td>"+array[i].emName+"</td><td>"+array[i].department+"</td><td>"+ array[i].signDate+"</td><td>"+ array[i].signTime+"</td><td>"+ array[i].signOut+"</td></tr>");
             }
         }else{
             alert('查询失败，请重试');
@@ -92,7 +92,7 @@ function byDepartmentAndSignDate(){
         if(data.code=='1'){
             var array=data.result;
             for(var i in array){
-                $('#recordTable').append("<tr><td>"+array[i].jobNo+"</td><td>"+array[i].emName+"</td><td>"+array[i].department+"</td><td>"+ array[i].signDate+"</td><td>"+ array[i].signTime+"</td><td>"+ array[i].signOut+"</td></tr>");
+                $('#exportToExel').append("<tr><td>"+array[i].jobNo+"</td><td>"+array[i].emName+"</td><td>"+array[i].department+"</td><td>"+ array[i].signDate+"</td><td>"+ array[i].signTime+"</td><td>"+ array[i].signOut+"</td></tr>");
             }
         }else{
             alert('查询失败，请重试');
