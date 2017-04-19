@@ -20,21 +20,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="queryRecord.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="queryRecord.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascripts/queryRecord.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="102" column="22" lean-forward="false" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="22" />
+            <state relative-caret-position="660">
+              <caret line="48" column="20" lean-forward="false" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="queryRecord.jade" pinned="false" current-in-tab="true">
+      <file leaf-file-name="queryRecord.jade" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/queryRecord.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="28" column="63" lean-forward="false" selection-start-line="28" selection-start-column="63" selection-end-line="28" selection-end-column="63" />
+            <state relative-caret-position="480">
+              <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -82,8 +82,8 @@
         <option value="$PROJECT_DIR$/routes/setPosition.js" />
         <option value="$PROJECT_DIR$/routes/users.js" />
         <option value="$PROJECT_DIR$/routes/forgotPassword.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/queryRecord.js" />
         <option value="$PROJECT_DIR$/views/queryRecord.jade" />
+        <option value="$PROJECT_DIR$/public/javascripts/queryRecord.js" />
       </list>
     </option>
   </component>
@@ -190,7 +190,6 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
-    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -309,12 +308,12 @@
       <workItem from="1492584653585" duration="34000" />
       <workItem from="1492585231112" duration="3741000" />
       <workItem from="1492591304844" duration="286000" />
-      <workItem from="1492596680640" duration="429000" />
+      <workItem from="1492596680640" duration="1051000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14527000" />
+    <option name="totallyTimeSpent" value="15149000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1932" height="1056" extended-state="0" />
@@ -713,18 +712,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/queryRecord.js">
+    <entry file="file://$PROJECT_DIR$/views/queryRecord.jade">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="102" column="22" lean-forward="false" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="22" />
+        <state relative-caret-position="480">
+          <caret line="20" column="13" lean-forward="false" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/queryRecord.jade">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/queryRecord.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="28" column="63" lean-forward="false" selection-start-line="28" selection-start-column="63" selection-end-line="28" selection-end-column="63" />
+        <state relative-caret-position="660">
+          <caret line="48" column="20" lean-forward="false" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
           <folding />
         </state>
       </provider>
