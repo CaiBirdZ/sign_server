@@ -106,7 +106,7 @@ function gethtml()
 
     excelstr = "<html><head><!--<xml><x:ExcelWorkbook><x:ExcelWorksheets><x:ExcelWorksheet><x:Name>工作表标题</x:Name><x:WorksheetOptions><x:print><x:ValidPrinterInfo /></x:print></x:WorksheetOptions></x:ExcelWorksheet></x:ExcelWorksheets></x:ExcelWorkbook></xml><![endif]--></head>";
     excelstr += "<table border='1'>";
-    for (var i = 0; i < $("#exportToExel").rows.length; i++)
+    for (var i = 0; i < $("#exportToExel").find('tr').length; i++)
     {
         excelstr += "<tr>";
         for (var  j = 0; j < $("#exportToExel").rows[i].cells.length; j++)
