@@ -100,3 +100,18 @@ function byDepartmentAndSignDate(){
     });
 }
 
+function ExportToExcel() {
+    var elTable = $("#exportToExel");
+    var oRangeRef = document.body.createTextRange();
+    oRangeRef.moveToElementText(elTable);
+    oRangeRef.execCommand("Copy");
+    try {
+        var appExcel = new ActiveXObject("Excel.Application");
+    } catch (e) {
+        alert("If you change your mind, refresh your page  and select 'yes' to download excel.");
+        return;
+    }
+    appExcel.Visible = true;
+    appExcel.Workbooks.Add().Worksheets.Item(1).Paste();
+    appExcel  = null;
+}
